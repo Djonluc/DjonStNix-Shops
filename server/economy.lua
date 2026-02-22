@@ -21,7 +21,7 @@ local function InitEconomy()
             end
         end
     end
-    print(("^5[DjonStNix]^7 Economy engine started | ^3%s^7 Shops | ^3%s^7 Items"):format(shopCount, itemCount))
+    -- Initialized silently, summary in main.lua
 end
 
 -- Final Price Formula
@@ -131,7 +131,7 @@ local function LoadEconomy()
                     end
                 end
             end
-            print("^5[DjonStNix]^7 Shop stock levels synced")
+            -- Silently loaded
         end
     end)
 end

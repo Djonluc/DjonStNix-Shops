@@ -61,7 +61,8 @@ else
         end
         DetectEnvironment()
         Bridge.Ready = true
-        print(("^5[DjonStNix]^7 Framework: ^3%s^7 | Inventory: ^3%s^7 | Target: ^3%s^7"):format(Bridge.Framework, Bridge.Inventory or "auto", Bridge.Target or "none"))
+        local database = GetResourceState('oxmysql') == 'started' and "oxmysql" or "none"
+        print(("^5[DjonStNix]^7 Framework: ^3%s^7 | Inventory: ^3%s^7 | Target: ^3%s^7 | SQL: ^3%s^7"):format(Bridge.Framework, Bridge.Inventory or "auto", Bridge.Target or "none", database))
     end)
 end
 

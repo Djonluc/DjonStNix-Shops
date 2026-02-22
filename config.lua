@@ -134,7 +134,8 @@ Config.Shops = {
 
 
 -- ==================================================
--- PLAYER FRANCHISE SYSTEM
+-- PLAYER FRANCHISE SYSTEM (UNDER DEVELOPMENT)
+-- Note: This system is currently disabled in fxmanifest.lua
 -- ==================================================
 Config.FranchisePrice = 75000 -- Initial investment
 Config.AdvertisePrice = 5000 -- Price for 1 hour of map highlighting

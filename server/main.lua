@@ -108,6 +108,8 @@ end, "admin")
 
 -- System Ready
 CreateThread(function()
+    while not Config or not Config.Shops do Wait(10) end
     Wait(2000) -- Allow other modules to init
+    print(("^5[DjonStNix]^7 Loaded ^3%s^7 shops"):format(#Config.Shops))
     print("^2[DjonStNix]^7 System Ready.")
 end)
