@@ -92,6 +92,8 @@ end)
 Bridge.AddCommand("setinflation", "Set global inflation (Admin Only)", {{name="value", help="Inflation multiplier (e.g. 1.2)"}}, function(source, args)
     local val = tonumber(args[1])
     if val then
+        local maxInf = Config.MaxInflationMultiplier or 3.0
+        val = math.min(maxInf, math.max(Config.InitialInflation or 1.0, val))
         Economy.GlobalInflation = val
         Shared.Notify("Global inflation set to " .. val, "success")
     end

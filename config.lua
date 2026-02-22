@@ -67,6 +67,11 @@ Config.InflationDecayRate = 0.0001 -- Natural hourly decay
 Config.DemandIncreaseFactor = 0.01 -- Price jump per purchase
 Config.DemandCoolDownRate = 0.005 -- Demand decay per hour
 
+-- Safety Caps (Prevents prices from getting too ridiculous)
+Config.MaxInflationMultiplier = 3.0 -- Caps global inflation at 300%
+Config.MaxDemandMultiplier = 2.0    -- Caps individual item popularity jump at 200%
+Config.MaxTotalMultiplier = 6.0      -- Absolute ceiling for combined multipliers (Safety Lock)
+
 Config.VolatilitySettings = {
     ["standard"] = 0.05, -- 5% price jitter
     ["volatile"] = 0.15, -- 15% price jitter

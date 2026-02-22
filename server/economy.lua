@@ -43,7 +43,14 @@ Economy.CalculatePrice = function(item, shopIndex, itemIndex)
     local locationMultiplier = (area and area.priceMultiplier) or 1.0
     local inflationMultiplier = Economy.GlobalInflation or 1.0
     
-    local finalPrice = item.basePrice * demandMultiplier * scarcityMultiplier * locationMultiplier * inflationMultiplier
+    local totalMultiplier = demandMultiplier * scarcityMultiplier * locationMultiplier * inflationMultiplier
+    
+    -- Level 3: Hard Safety Ceiling
+    if totalMultiplier > (Config.MaxTotalMultiplier or 6.0) then
+        totalMultiplier = Config.MaxTotalMultiplier
+    end
+
+    local finalPrice = item.basePrice * totalMultiplier
     
     local volatilityType = area.volatility or "standard"
     local volatilityChance = Config.VolatilitySettings[volatilityType] or 0.05
@@ -70,7 +77,7 @@ local function UpdateInflation()
     
     if totalMoney > Config.InflationMoneySupplyThreshold then
         local excess = (totalMoney - Config.InflationMoneySupplyThreshold) / 100000
-        Economy.GlobalInflation = Config.InitialInflation + (excess * Config.InflationGrowthRate)
+        Economy.GlobalInflation = math.min(Config.MaxInflationMultiplier or 3.0, Config.InitialInflation + (excess * Config.InflationGrowthRate))
     else
         Economy.GlobalInflation = math.max(Config.InitialInflation, Economy.GlobalInflation - Config.InflationDecayRate)
     end
@@ -89,7 +96,7 @@ Economy.GetStock = function(shopIdx, itemIdx) return ShopStocks[shopIdx][itemIdx
 Economy.SetStock = function(shopIdx, itemIdx, val) ShopStocks[shopIdx][itemIdx] = val end
 
 Economy.RegisterPurchase = function(itemName)
-    Economy.ItemDemand[itemName] = (Economy.ItemDemand[itemName] or 1.0) + Config.DemandIncreaseFactor
+    Economy.ItemDemand[itemName] = math.min(Config.MaxDemandMultiplier or 2.0, (Economy.ItemDemand[itemName] or 1.0) + Config.DemandIncreaseFactor)
 end
 
 -- ==================================================
