@@ -21,7 +21,7 @@ local function InitEconomy()
             end
         end
     end
-    print("^4["..Config.BrandName.."]^7 💰 Economy engine started | 🏠 Shops: ^3" .. shopCount .. "^7 | 📦 Items: ^3" .. itemCount .. "^7 ✅")
+    print(("^5[DjonStNix]^7 Economy engine started | ^3%s^7 Shops | ^3%s^7 Items"):format(shopCount, itemCount))
 end
 
 -- Final Price Formula
@@ -100,7 +100,7 @@ local function LoadEconomy()
     MySQL.query('SELECT inflation FROM djonstnix_shops_economy WHERE id = 1', {}, function(result)
         if result and result[1] then
             Economy.GlobalInflation = result[1].inflation
-            print("^4["..Config.BrandName.."]^7 📈 Inflation loaded: ^3" .. Economy.GlobalInflation .. "^7")
+            print(("^5[DjonStNix]^7 Inflation loaded: ^3%s^7"):format(Economy.GlobalInflation))
         end
     end)
 
@@ -110,7 +110,7 @@ local function LoadEconomy()
             for _, row in ipairs(results) do
                 Economy.ItemDemand[row.item_name] = row.demand_multiplier
             end
-            print("^4["..Config.BrandName.."]^7 📊 Demand multipliers loaded ✅")
+            print("^5[DjonStNix]^7 Demand multipliers loaded")
         end
     end)
 
@@ -131,7 +131,7 @@ local function LoadEconomy()
                     end
                 end
             end
-            print("^4["..Config.BrandName.."]^7 📦 Shop stock levels synced ✅")
+            print("^5[DjonStNix]^7 Shop stock levels synced")
         end
     end)
 end

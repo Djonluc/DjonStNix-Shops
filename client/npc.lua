@@ -155,9 +155,9 @@ end)
 -- Initial Spawn
 CreateThread(function()
     while not Config or not Config.Shops do Wait(100) end
-    print("^4["..Config.BrandName.."]^7 👤 Spawning shop NPCs...")
+    print("^5[DjonStNix]^7 Spawning shop NPCs...")
     for i, shop in ipairs(Config.Shops) do
         CreateShopNPC(shop, i)
     end
-    print("^4["..Config.BrandName.."]^7 👤 All ^3" .. #Config.Shops .. "^7 NPCs spawned ✅")
+    print(("^5[DjonStNix]^7 All ^3%s^7 NPCs spawned"):format(#Config.Shops))
 end)

@@ -94,13 +94,20 @@ Bridge.AddCommand("setinflation", "Set global inflation (Admin Only)", {{name="v
 end, "admin")
 
 Bridge.AddCommand("testeconomy", "Log economy status", {}, function(source, args)
-    print("^4["..Config.BrandName.."]^7 ─────────────────────────────")
-    print("^4["..Config.BrandName.."]^7 📊 Economy Status Report")
-    print("^4["..Config.BrandName.."]^7 ─────────────────────────────")
-    print("^4["..Config.BrandName.."]^7 📈 Inflation: ^3" .. Economy.GlobalInflation .. "^7")
-    print("^4["..Config.BrandName.."]^7 💵 Money Supply: ^3$" .. Economy.GlobalMoneySupply .. "^7")
+    print("^5[DjonStNix]^7 ─────────────────────────────")
+    print("^5[DjonStNix]^7 Economy Status Report")
+    print("^5[DjonStNix]^7 ─────────────────────────────")
+    print(("^5[DjonStNix]^7 Inflation: ^3%s^7"):format(Economy.GlobalInflation))
+    print(("^5[DjonStNix]^7 Money Supply: ^3$%s^7"):format(Economy.GlobalMoneySupply))
     for name, dem in pairs(Economy.ItemDemand) do
-        print("^4["..Config.BrandName.."]^7   📦 " .. name .. " | Demand: ^3" .. string.format("%.2f", dem) .. "^7")
+        print(("^5[DjonStNix]^7   📦 %s | Demand: ^3%s^7"):format(name, string.format("%.2f", dem)))
     end
-    print("^4["..Config.BrandName.."]^7 ─────────────────────────────")
+    print("^5[DjonStNix]^7 ─────────────────────────────")
+    print("^5[DjonStNix]^7 ─────────────────────────────")
 end, "admin")
+
+-- System Ready
+CreateThread(function()
+    Wait(2000) -- Allow other modules to init
+    print("^2[DjonStNix]^7 System Ready.")
+end)
