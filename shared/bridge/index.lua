@@ -61,7 +61,7 @@ else
         end
         DetectEnvironment()
         Bridge.Ready = true
-        print("^4["..Config.BrandName.." Bridge]^7 Initialization complete. Framework: " .. Bridge.Framework)
+        print("^4["..Config.BrandName.."]^7 🌉 Bridge initialized | Framework: ^3" .. Bridge.Framework .. "^7 | Target: ^3" .. (Bridge.Target or "none") .. "^7 | Inventory: ^3" .. (Bridge.Inventory or "auto") .. "^7 ✅")
     end)
 end
 

@@ -1,5 +1,16 @@
 Shared = {}
 
+-- 🏪 Startup Banner
+CreateThread(function()
+    while not Config or not Config.BrandName do Wait(10) end
+    print("^4╔══════════════════════════════════════════╗^7")
+    print("^4║^7  🏪  ^3" .. Config.BrandName .. "^7  v5.0.0              ^4║^7")
+    print("^4║^7  💻  Developer: ^3DjonStNix^7          ^4║^7")
+    print("^4║^7  🌐  github.com/Djonluc                ^4║^7")
+    print("^4║^7  💬  discord.gg/s7GPUHWrS7             ^4║^7")
+    print("^4╚══════════════════════════════════════════╝^7")
+end)
+
 -- Branded notification helper
 Shared.Notify = function(msg, type)
     local prefix = "["..Config.BrandName.."] "

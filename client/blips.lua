@@ -35,6 +35,7 @@ function CreateShopBlips(statuses)
             activeBlips[i] = blip
         end
     end
+    print("^4["..Config.BrandName.."]^7 📍 Map blips created: ^3" .. #activeBlips .. "^7 ✅")
 end
 
 -- Refresh Blips Event
@@ -48,6 +49,7 @@ end)
 CreateThread(function()
     while not Config or not Config.Shops do Wait(100) end
     Wait(1000)
+    print("^4["..Config.BrandName.."]^7 📍 Initializing map blips...")
     TriggerEvent('DjonStNix-Shops:client:UpdateBlips')
 end)
 

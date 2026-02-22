@@ -94,10 +94,13 @@ Bridge.AddCommand("setinflation", "Set global inflation (Admin Only)", {{name="v
 end, "admin")
 
 Bridge.AddCommand("testeconomy", "Log economy status", {}, function(source, args)
-    print("--- DjonStNix Economy Status ---")
-    print("Global Inflation: " .. Economy.GlobalInflation)
-    print("Money Supply: " .. Economy.GlobalMoneySupply)
+    print("^4["..Config.BrandName.."]^7 ─────────────────────────────")
+    print("^4["..Config.BrandName.."]^7 📊 Economy Status Report")
+    print("^4["..Config.BrandName.."]^7 ─────────────────────────────")
+    print("^4["..Config.BrandName.."]^7 📈 Inflation: ^3" .. Economy.GlobalInflation .. "^7")
+    print("^4["..Config.BrandName.."]^7 💵 Money Supply: ^3$" .. Economy.GlobalMoneySupply .. "^7")
     for name, dem in pairs(Economy.ItemDemand) do
-        print("Item: " .. name .. " | Demand: " .. dem)
+        print("^4["..Config.BrandName.."]^7   📦 " .. name .. " | Demand: ^3" .. string.format("%.2f", dem) .. "^7")
     end
+    print("^4["..Config.BrandName.."]^7 ─────────────────────────────")
 end, "admin")
