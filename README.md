@@ -13,9 +13,16 @@
 
 ---
 
+---
+
 # 🏪 DjonStNix Shops
 
 > **A premium, dynamic shop ecosystem for FiveM with real-time economy simulation, transparent NUI interface, and multi-framework support.**
+
+## 📸 Showcase
+
+![DjonStNix Shops UI Showcase](https://raw.githubusercontent.com/Djonluc/DjonStNix-Shops/master/assets/showcase.png)
+*(Note: Upload the provided screenshot to an assets folder in your repo to see this live on GitHub!)*
 
 ---
 
