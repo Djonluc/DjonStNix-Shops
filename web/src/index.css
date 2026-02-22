@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body {
+    @apply text-white antialiased;
+    font-family: 'Inter', sans-serif;
+    background: transparent !important;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+/* Glassmorphism Classes - No backdrop-filter (FiveM CEF can't blur game world) */
+.glass {
+  background: rgba(15, 15, 18, 0.93);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-card {
+  background: rgba(25, 25, 30, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  background: rgba(35, 35, 42, 0.75);
+  border-color: rgba(197, 160, 89, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(197, 160, 89, 0.5);
+}
+
+
+/* SVG Border Draw Animation */
+@keyframes draw {
+  to { stroke-dashoffset: 0; }
+}

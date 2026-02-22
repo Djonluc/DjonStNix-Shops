@@ -1,0 +1,20 @@
+# Dependencies
+web/node_modules/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+npm-debug.log*
+
+# Build cache (ui/ is committed since it's the compiled NUI)
+web/.vite/
