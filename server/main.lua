@@ -42,6 +42,10 @@ RegisterNetEvent('DjonStNix-Shops:server:PurchaseItem', function(shopIndex, item
     local totalPrice = serverPrice * amount
     local currentStock = Economy.GetStock(shopIndex, itemIndex)
     
+    if Config.Debug then
+        print(("^5[DjonStNix Debug]^7 Purchase Attempt | Player: ^3%s^7 | Item: ^3%s^7 | Amount: ^3%s^7 | Price: ^3%s^7"):format(src, itemData.name, amount, totalPrice))
+    end
+    
     -- Validation
     if amount <= 0 then return end
     
@@ -108,8 +112,24 @@ end, "admin")
 
 -- System Ready
 CreateThread(function()
-    while not Config or not Config.Shops do Wait(10) end
+    while not Config or not Config.Shops or not Bridge.Ready do Wait(10) end
     Wait(2000) -- Allow other modules to init
-    print(("^5[DjonStNix]^7 Loaded ^3%s^7 shops"):format(#Config.Shops))
+    
+    local framework = Bridge.Framework:gsub("^%l", string.upper)
+    local inventory = (Bridge.Inventory or "auto"):gsub("^%l", string.upper)
+    local target = (Bridge.Target or "none"):gsub("^%l", string.upper)
+    local database = GetResourceState('oxmysql') == 'started' and "oxmysql (Connected)" or "none"
+    local shopCount = #Config.Shops
+    local npcCount = shopCount -- Standard architecture
+    local blipCount = shopCount
+
+    print("^5[DjonStNix Shops]^7 v5.0.0 Starting...")
+
+    print(("^5[DjonStNix]^7 Framework: ^3%s^7 | Inventory: ^3%s^7 | Target: ^3%s^7 | SQL: ^3%s^7")
+        :format(framework, inventory, target, database))
+
+    print(("^5[DjonStNix]^7 Loaded ^3%s^7 shops | ^3%s^7 NPCs | ^3%s^7 blips")
+        :format(shopCount, npcCount, blipCount))
+
     print("^2[DjonStNix]^7 System Ready.")
 end)

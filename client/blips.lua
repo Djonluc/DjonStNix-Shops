@@ -35,7 +35,7 @@ function CreateShopBlips(statuses)
             activeBlips[i] = blip
         end
     end
-    print(("^5[DjonStNix]^7 Loaded ^3%s^7 blips"):format(#activeBlips))
+
 end
 
 -- Refresh Blips Event

@@ -159,5 +159,5 @@ CreateThread(function()
     for i, shop in ipairs(Config.Shops) do
         CreateShopNPC(shop, i)
     end
-    print(("^5[DjonStNix]^7 Loaded ^3%s^7 NPCs"):format(#Config.Shops))
+
 end)

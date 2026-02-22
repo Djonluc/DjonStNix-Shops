@@ -1,4 +1,5 @@
 Config = Config or {}
+Config.Debug = false -- Set to true for deep logging
 
 -- ==================================================
 -- DJONSTNIX SHOPS - PRODUCT DEFINITIONS

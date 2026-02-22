@@ -29,6 +29,7 @@ end)
 
 -- Close NUI
 RegisterNUICallback('close', function(data, cb)
+    if Config.Debug then print("^5[DjonStNix Debug]^7 NUI Callback: close") end
     SetNuiFocus(false, false)
     isOpen = false
     cb('ok')
@@ -36,6 +37,7 @@ end)
 
 -- Handle Purchase (Cart Checkout)
 RegisterNUICallback('checkout', function(data, cb)
+    if Config.Debug then print("^5[DjonStNix Debug]^7 NUI Callback: checkout | Cart Items: " .. (data.cart and #data.cart or 0)) end
     -- data.cart = { {itemName = "sandwich", amount = 2, shopIndex = 1, itemIndex = 1}, ... }
     if data.cart and #data.cart > 0 then
         for _, item in ipairs(data.cart) do

@@ -100,7 +100,9 @@ local function LoadEconomy()
     MySQL.query('SELECT inflation FROM djonstnix_shops_economy WHERE id = 1', {}, function(result)
         if result and result[1] then
             Economy.GlobalInflation = result[1].inflation
-            print(("^5[DjonStNix]^7 Inflation loaded: ^3%s^7"):format(Economy.GlobalInflation))
+            if Config.Debug then
+                print(("^5[DjonStNix Debug]^7 Inflation loaded: ^3%s^7"):format(Economy.GlobalInflation))
+            end
         end
     end)
 
@@ -110,7 +112,9 @@ local function LoadEconomy()
             for _, row in ipairs(results) do
                 Economy.ItemDemand[row.item_name] = row.demand_multiplier
             end
-            print("^5[DjonStNix]^7 Demand multipliers loaded")
+            if Config.Debug then
+                print("^5[DjonStNix Debug]^7 Demand multipliers loaded")
+            end
         end
     end)
 
