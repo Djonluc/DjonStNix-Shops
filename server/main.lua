@@ -5,6 +5,13 @@ Bridge.CreateCallback('DjonStNix-Shops:server:GetShopData', function(source, cb,
         return cb(nil) 
     end
     
+    if shop.requiresAccessItem then
+        if not Bridge.HasItem(source, shop.requiresAccessItem) then
+            Bridge.Notify(source, "You lack the required access device.", "error")
+            return cb(nil)
+        end
+    end
+    
     local clientData = {
         name = shop.shopName,
         items = {}
@@ -34,6 +41,15 @@ RegisterNetEvent('DjonStNix-Shops:server:PurchaseItem', function(shopIndex, item
     if not playerData then return end
     
     local shop = Config.Shops[shopIndex]
+    if not shop then return end
+    
+    if shop.requiresAccessItem then
+        if not Bridge.HasItem(src, shop.requiresAccessItem) then
+            Bridge.Notify(src, "Access Denied: Missing device.", "error")
+            return
+        end
+    end
+    
     local itemData = shop.items[itemIndex]
     if not itemData then return end
     

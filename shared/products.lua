@@ -34,8 +34,14 @@ Config.Products = {
         { name = "pistol_ammo", basePrice = 200, baseStock = 100, elasticity = 0.9, category = "ammo" },
     },
     ["clandestine"] = {
-        { name = "radioscanner", basePrice = 8500, baseStock = 2, elasticity = 2.5, category = "illegal" },
-        { name = "lockpick", basePrice = 1200, baseStock = 15, elasticity = 1.8, category = "illegal" },
-        { name = "screwdriverset", basePrice = 450, baseStock = 10, elasticity = 1.2, category = "illegal" },
+        { name = "radioscanner", basePrice = 6000, baseStock = 2, elasticity = 2.5, category = "illegal" },
+        { name = "lockpick", basePrice = 1000, baseStock = 15, elasticity = 1.8, category = "illegal" },
+        { name = "advancedlockpick", basePrice = 4800, baseStock = 5, elasticity = 2.0, category = "illegal" },
+        { name = "screwdriverset", basePrice = 600, baseStock = 10, elasticity = 1.2, category = "illegal" },
+        { name = "thermite", basePrice = 10000, baseStock = 2, elasticity = 2.5, category = "illegal" },
+        { name = "vpn", basePrice = 8000, baseStock = 3, elasticity = 2.2, category = "illegal" },
+        { name = "heavyarmor", basePrice = 4000, baseStock = 5, elasticity = 1.6, category = "illegal" },
+        { name = "weapon_switchblade", basePrice = 2000, baseStock = 5, elasticity = 1.5, category = "weapons" },
+        { name = "weapon_microsmg", basePrice = 26000, baseStock = 1, elasticity = 3.0, category = "weapons" },
     }
 }

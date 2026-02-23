@@ -33,11 +33,12 @@
 | 🎨 **Premium NUI** | Transparent glassmorphism React UI with animated DjonStNix branding |
 | 🔄 **Dynamic Economy** | Real-time inflation, demand-based pricing, and scarcity multipliers |
 | 🔫 **Weapons License** | Armory shops display license warnings; server enforces license checks |
+| 🕵️ **Black Market** | Hidden locations requiring a VPN to access, completely off the grid |
 | 🛒 **Cart System** | Multi-item checkout with quantity controls and live total |
 | 🌐 **Multi-Framework** | Auto-detects QBCore or ESX — no manual setup needed |
 | 📦 **Universal Inventory** | Works with qb-inventory, ox_inventory, and qs-inventory |
 | 🎯 **Target Support** | Native qb-target, ox_target, or fallback 3D Text interaction |
-| 🗺️ **Map Blips** | Auto-generated blips for all shop locations |
+| 🗺️ **Map Blips** | Auto-generated blips for all normal shop locations |
 | 📊 **Area Pricing** | Premium, city, suburban, rural, and blackmarket price zones |
 | ⌨️ **Escape to Close** | Press ESC or click X to close the shop UI |
 
@@ -120,7 +121,7 @@ DjonStNix-Shops/
 | **LTD Gasoline** | General goods | Various |
 | **Liquor Stores** | General goods | Various |
 | **Armory (Ammu-Nation)** | Weapons, ammo, knives | Premium / City / Rural |
-| **Clandestine** | Illegal items (lockpicks, scanners) | Blackmarket |
+| **Clandestine** | Illegal items (vpn, thermite, micro smg), access requires VPN | Blackmarket (Hidden) |
 | **Supply Shops** | Tools, repair kits, binoculars | City / Rural |
 
 ---

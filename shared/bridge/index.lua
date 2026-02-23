@@ -179,6 +179,24 @@ Bridge.AddItem = function(source, item, amount)
     end
 end
 
+Bridge.HasItem = function(source, item)
+    local Player = Bridge.GetPlayer(source)
+    if not Player then return false end
+
+    if Bridge.Inventory == "ox" then
+        return exports.ox_inventory:Search(source, 'count', item) > 0
+    elseif Bridge.Inventory == "qs" then
+        return exports['qs-inventory']:Search(source, 'count', item) > 0
+    elseif Bridge.Framework == "qb" then
+        local targetItem = Player.Functions.GetItemByName(item)
+        return targetItem ~= nil and targetItem.amount > 0
+    elseif Bridge.Framework == "esx" then
+        local targetItem = Player.getInventoryItem(item)
+        return targetItem ~= nil and targetItem.count > 0
+    end
+    return false
+end
+
 -- ==================================================
 -- PLAYER DATA WRAPPERS
 -- ==================================================

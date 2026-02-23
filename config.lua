@@ -132,7 +132,11 @@ Config.Shops = {
     { shopName = "DjonStNix Armory - Gt Ocean Hwy", coords = vector4(-3173.3, 1088.8, 20.8, 244.1), areaType = "rural", npcModel = "s_m_y_ammucity_01", npcScenario = "WORLD_HUMAN_COP_IDLES", items = Config.Products["armory"], blip = { id = 110, color = 1, scale = 0.6 } },
 
     -- Clandestine & Tools
-    { shopName = "DjonStNix Clandestine - Sandy Shores", coords = vector4(1959.0, 3740.0, 32.3, 300.0), areaType = "blackmarket", npcModel = "G_M_Y_Lost_01", npcScenario = "WORLD_HUMAN_SMOKING", items = Config.Products["clandestine"], blip = { id = 566, color = 64, scale = 0.6 } },
+    -- Black markets require a VPN to access and DO NOT have map blips.
+    { shopName = "DjonStNix Clandestine - Sandy Shores", coords = vector4(1959.0, 3740.0, 32.3, 300.0), areaType = "blackmarket", npcModel = "G_M_Y_Lost_01", npcScenario = "WORLD_HUMAN_SMOKING", items = Config.Products["clandestine"], requiresAccessItem = "vpn" },
+    { shopName = "DjonStNix Clandestine - LS Sewers", coords = vector4(746.07, -1004.83, 22.86, 271.74), areaType = "blackmarket", npcModel = "g_m_y_famca_01", npcScenario = "WORLD_HUMAN_DRUG_DEALER", items = Config.Products["clandestine"], requiresAccessItem = "vpn" },
+    { shopName = "DjonStNix Clandestine - Empty Warehouse", coords = vector4(973.86, -2147.28, 29.47, 269.83), areaType = "blackmarket", npcModel = "g_m_m_chiboss_01", npcScenario = "WORLD_HUMAN_STAND_MOBILE", items = Config.Products["clandestine"], requiresAccessItem = "vpn" },
+
     { shopName = "DjonStNix Supply - Davis", coords = vector4(47.2, -1748.8, 29.6, 50.0), areaType = "city", npcModel = "s_m_m_autoshop_01", npcScenario = "WORLD_HUMAN_CLIPBOARD", items = Config.Products["tools"], blip = { id = 566, color = 64, scale = 0.6 } },
     { shopName = "DjonStNix Supply - Grapeseed", coords = vector4(2747.7, 3472.8, 55.6, 255.0), areaType = "rural", npcModel = "s_m_m_autoshop_01", npcScenario = "WORLD_HUMAN_CLIPBOARD", items = Config.Products["tools"], blip = { id = 566, color = 64, scale = 0.6 } },
     { shopName = "DjonStNix Supply - Paleto Bay", coords = vector4(-421.8, 6136.1, 31.8, 228.2), areaType = "rural", npcModel = "s_m_m_autoshop_01", npcScenario = "WORLD_HUMAN_CLIPBOARD", items = Config.Products["tools"], blip = { id = 566, color = 64, scale = 0.6 } }
